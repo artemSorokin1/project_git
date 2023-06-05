@@ -1,0 +1,2307 @@
+import random
+from PIL import Image
+import os
+from datetime import datetime
+
+#код максимально хуевый, но мне лень делать все кравиво, поэтому будет копипаст
+# 1 var dodelat
+# 2 +
+
+
+rand = random.randint(1, 15)
+s = str(rand)
+
+
+img = Image.open('images/' + s + '.jpg')
+img.show()
+
+#--------------------------------------------------------------------------------------------------------------------------
+if s == '1' or s == '3':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d> <d,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,b> <e,c> <e,d>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,b> <f,c>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,b> <g,d>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h> <h,b> <h,c> <h,d> <h,e> <h,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,b> <i,c> <i,d> <i,e> <i,g> <i,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a f c b"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a i"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "b"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "a" and resstr[-1] == "b":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+#--------------------------------------------------------------------------------------------------------------------------
+elif s == '2' or s == '4':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):   
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,d> <a,e> <a,f> <a,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b> <b,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,b> <c,d> <c,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,f> <e,h> <e,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,b> <g,h> <g,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a b c"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a g"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "f d h"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "h" and resstr[-1] == "a":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------
+elif s == '5':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,f> <a,g> <a,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b> <b,c> <b,f> <b,g> <b,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,f> <c,g> <c,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d> <d,c> <d,e> <d,f> <d,g> <d,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,f> <e,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, h] = {x ∈ A | a ≤ x ≤ h} = "))
+        if (rstr == "c d e f g h"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[h, a] = {x ∈ A | h ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a d i"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "h i"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if (resstr[0] == "h" or resstr[0] == "i") and resstr[-1] == "a":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+#-------------------------------------------------------------------------------------------------------------------------
+
+elif s == '6':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):   
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,d>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,b> <c,d>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d> <d,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,b> <e,d> <e,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,b> <g,f> <g,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,b> <i,f> <i,g> <i,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a c d b"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a e i"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b h"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "b" and resstr[-1] == "i":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+#-------------------------------------------------------------------------------------------------------------------------
+
+elif s == '7':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):   
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,a> <c,b> <c,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,b> <d,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,b> <f,e> <f,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h> <h,b> <h,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,b> <i,g> <i,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a e b"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "c d f i"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "b"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "b" and resstr[-1] == "i":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+#-------------------------------------------------------------------------------------------------------------------------
+elif s == '8':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,d> <a,e> <a,f> <a,g> <a,h> <a,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b> <b,g> <b,h> <b,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,d> <c,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,f> <e,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, f] = {x ∈ A | a ≤ x ≤ f} = "))
+        if (rstr == "a c e f"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[f, a] = {x ∈ A | f ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "d i f g"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "a"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "i" and resstr[-1] == "a":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+#--------------------------------------------------------------------------------------------------------------------------
+elif s == '9':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,b> <g,c> <g,d> <g,e> <g,i> <g,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h> <h,d> <h,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a b c"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "g"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b d i f"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "g"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "b" and resstr[-1] == "g":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+#--------------------------------------------------------------------------------------------------------------------------
+elif s == '10':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,g> <a,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,b> <c,d> <c,e> <c,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d> <d,b> <d,e> <d,f> <d,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,b> <e,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a b g"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a c i"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b h i"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if (resstr[0] == "b" or resstr[0] == "i") and resstr[-1] == "c":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+#-------------------------------------------------------------------------------------------------------------------------
+
+elif s == '11':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):   
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,d> <a,e> <a,f> <a,g> <a,h> <a,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b> <b,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,b> <c,d> <c,e> <c,e> <c,f> <c,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h> <h,b> <h,e> <h,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,b> <i,e> <i,f> <i,g> <i,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a b c h i"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "d e g"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "a"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "e" and resstr[-1] == "a":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+#--------------------------------------------------------------------------------------------------------------------------
+elif s == '12':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d> <d,b> <d,c>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,b> <f,e> <f,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,b> <g,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h> <h,b> <h,e> <h,f> <h,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,b> <i,e> <i,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a b c d e f"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a i h"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "b"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "b" and resstr[-1] == "i":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+elif s == '13':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,d> <a,e> <a,f> <a,g> <a,h> <a,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d> <d,b> <d,c>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,e>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g> <g,b> <g,c> <g,d> <g,e> <g,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a b d g i"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "a"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b c e h"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "a"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "c" and resstr[-1] == "a":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+elif s == '14':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,c> <a,g> <a,h> <a,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d> <d,a> <d,b> <d,c> <d,e> <d,f> <d,g> <d,h> <d,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,f> <e,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h> <h,b> <h,g> <h,i>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a b h i"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "d"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b c f g"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "d"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if resstr[0] == "b" and resstr[-1] == "d":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+elif s == '15':
+    counter_try = 0
+    check = False
+
+
+    curent_time = datetime.now()
+    s_start_time = str(curent_time)
+    s_start_time = s_start_time[11:19]
+ 
+
+    ns = str(input("Введите фамилию и имя: "))
+    group = str(input("Введите номер группы: "))
+
+    #3.1
+    while not(check):  
+        strstr = str(input("Перечислите все пары, начинающиеся на а (<a,a> <a,b> ...):\n"))
+        if strstr != "<a,a> <a,b> <a,d> <a,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на b (<b,b> <b,a> ...):\n"))
+        if strstr != "<b,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на c (<c,c> <c,a> ...):\n"))
+        if strstr != "<c,c> <c,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на d (<d,d> <d,a> ...):\n"))
+        if strstr != "<d,d> <d,b>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на e (<e,e> <e,a> ...):\n"))
+        if strstr != "<e,e> <e,b> <e,c>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на f (<f,f> <f,a> ...):\n"))
+        if strstr != "<f,f> <f,b> <f,c>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на g (<g,g> <g,a> ...):\n"))
+        if strstr != "<g,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на h (<h,h> <h,a> ...):\n"))
+        if strstr != "<h,h>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        strstr = str(input("Перечислите все пары, начинающиеся на i (<i,i> <i,a> ...):\n"))
+        if strstr != "<i,i> <i,a> <i,b> <i,c> <i,d> <i,f> <i,g>":
+            print("Ответ неправильный, попробуй сначала\n")
+            counter_try += 1
+            continue
+
+        else:
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+
+
+    check = False
+    print("Введите все элементы, входящие в отрезок через пробел, если таких элементов нет - введите 0")
+    while not(check):
+        rstr = str(input("[a, b] = {x ∈ A | a ≤ x ≤ b} = "))
+        if (rstr == "a b d"):
+            print("Продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+    
+
+
+    check = False
+
+    while not(check):
+        strr = str(input("[b, a] = {x ∈ A | b ≤ x ≤ a} = "))
+        if (strr == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str1 = str(input("Введите минимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str1 == "e h i"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+    check = False
+
+    while not(check):
+        str2 = str(input("Введите максимальный(ые) элемент(ы) через пробелы\nЕсли таковых нет то введите '0':\n"))
+        if (str2 == "b g h"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str3 = str(input("Введите наименьший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str3 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        str4 = str(input("Введите наибольший элемент\nЕсли такого нет то введите '0':\n"))
+        if (str4 == "0"):
+            print("Ответ правильный, продолжаем...\n")
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
+
+
+
+    check = False
+
+    while not(check):
+        resstr = str(input("Введите элементы в линейном порядке в порядке возрастания\n"))
+
+        if (resstr[0] == "b" or resstr[0] == "h") and resstr[-1] == "i":#ToDo добавить проверку посередине
+            print("Ответ правильный\n")
+            curent_time = datetime.now()
+            s_curent_time = str(curent_time)
+            s_curent_time = s_curent_time[11:19]
+
+            print("Задание выполнено\n\nВыполнил: ", ns, "\nГруппа: ", group, "\nКоличество ошибок: ", counter_try,'\nВремя начала: ', s_start_time ,'\nВремя оконяания: ', s_curent_time, '\n')
+            check = True
+        else:
+            print("Ответ неправильный, попробуй заново\n")
+            counter_try += 1
+
